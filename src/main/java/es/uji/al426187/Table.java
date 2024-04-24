@@ -31,9 +31,7 @@ public class Table {
         this.headers = etiquetas;
     }
 
-    public  void safawf(){
-
-    }
+    
 
 
 

@@ -1,7 +1,7 @@
 // COMENTADO
 //
 // - ¡Necesitas usar paquetes para organizar tu código!
-// - definición de la interfaz “Algortihm” correcta, pero kMeans no implementa la interfaz
+// - CORREGIDO MAS O MENOS definición de la interfaz “Algortihm” correcta, pero kMeans no implementa la interfaz
 // - falta SongRecSys, no ejecuta el código; sin que kMeans implemente Algorithm, no puede funcionar
 // - SongRecSys está en las pruebas, pero no ejecuta (como kMeans no implementa la interfaz Algorithm):
 // Exception in thread "main" java.lang.ClassCastException: class es.uji.al426187.KMeans cannot be cast to class
@@ -35,7 +35,7 @@ import java.util.*;
 import java.util.*;
 
 // SVEN: no implementa Algorithm
-public class KMeans implements Algorithm {
+public class KMeans implements Algorithm<Table, Integer, List<Double>> {
     private final int numClusters; //numero de grupos
     private final int numIterations;
     private final long seed;

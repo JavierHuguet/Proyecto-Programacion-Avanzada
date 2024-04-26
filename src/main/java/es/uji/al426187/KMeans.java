@@ -56,14 +56,15 @@ public class KMeans {
 
         if (numClusters > datos.getNumRows()) {
             throw new KMeansException("El número de grupos es mayor que el número en la tabla");
-        }
-        seleccionarPrototiposIniciales(datos); //tantos como grupos
-        List<Integer> asignaciones;
+        } else {
+            seleccionarPrototiposIniciales(datos); //tantos como grupos
+            List<Integer> asignaciones;
 
-        for (int i = 0; i < numIterations; i++) {
+            for (int i = 0; i < numIterations; i++) {
 
-            asignaciones = asignargrupos(datos);
-            actualizarCentroides(datos, asignaciones);
+                asignaciones = asignarGrupos(datos);
+                actualizarCentroides(datos, asignaciones);
+            }
         }
     }
 
@@ -72,14 +73,16 @@ public class KMeans {
         // Necesitas más abstraciones y/o cambiar "asignargrupos"
         Table data = new Table();
         data.addRow(dato);
-        List<Integer> grupo = asignargrupos(data);
+        List<Integer> grupo = asignarGrupos(data);
         return grupo.get(0);
     }
 
-    // SVEN: - método con una perdida de rendimiento (O(n) donde O(numCluster) es posible) y espacio (n, donde numClusters es posible).
+    // SVEN: - método con una perdida de rendimiento (O(n) donde
+    // O(numCluster) es posible) y espacio (n, donde numClusters es posible).
     public void seleccionarPrototiposIniciales(Table datos) {
         List<Integer> indices = new ArrayList<>();
-        // SVEN: si tenemos por ejemplo 1.000.000 rows, vas a crear una lista de 1.000.000 elementos, solo para seleccionar
+        // SVEN: si tenemos por ejemplo 1.000.000 rows,
+        // vas a crear una lista de 1.000.000 elementos, solo para seleccionar
         // numClusters (p.e. 3 en nuestros ejemplos) rows aleatoriamente?
         for (int i = 0; i < datos.getNumRows(); i++) {
             indices.add(i);
@@ -152,8 +155,8 @@ public class KMeans {
 
     }
 
-    // SVEN: convenciones de nombres: asignarGrupos
-    private List<Integer> asignargrupos(Table datos) {
+
+    private List<Integer> asignarGrupos(Table datos) {
         List<Integer> asignaciones = new ArrayList<>();
         double d;
         int asignacionesnum = 0;

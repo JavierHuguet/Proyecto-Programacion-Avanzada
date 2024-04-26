@@ -9,7 +9,7 @@ import java.util.List;
 public class Table {
 
 
-    private List<Row> rows = new ArrayList<>();
+    protected List<Row> rows = new ArrayList<>();
     private List<String> headers = new ArrayList<>();
 
 
@@ -31,7 +31,7 @@ public class Table {
         this.headers = etiquetas;
     }
 
-    
+
 
 
 

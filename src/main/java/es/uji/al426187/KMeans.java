@@ -35,7 +35,7 @@ import java.util.*;
 import java.util.*;
 
 // SVEN: no implementa Algorithm
-public class KMeans {
+public class KMeans implements Algorithm {
     private final int numClusters; //numero de grupos
     private final int numIterations;
     private final long seed;
@@ -52,6 +52,7 @@ public class KMeans {
 
 
 
+    @Override
     public void train(Table datos) throws KMeansException {
 
         if (numClusters > datos.getNumRows()) {
@@ -68,6 +69,7 @@ public class KMeans {
         }
     }
 
+    @Override
     public Integer estimate(List<Double> dato) {
         // SVEN: no tendría que ser necesario crear un "Table" con una "Row" para hacer el "asignargrupos(...).
         // Necesitas más abstraciones y/o cambiar "asignargrupos"

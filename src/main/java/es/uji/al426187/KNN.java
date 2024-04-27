@@ -9,8 +9,11 @@ public class KNN implements Algorithm<TableWithLabels, Integer, List<Double>> {
 
     public TableWithLabels tablaCompleta;
 
-    public KNN(){
+    public Distance distance;
+
+    public KNN(Distance distance){
         this.tablaCompleta = new TableWithLabels();
+        this.distance = distance;
     }
 
 
@@ -47,12 +50,6 @@ public class KNN implements Algorithm<TableWithLabels, Integer, List<Double>> {
 
 
     public double calculateDistance(List<Double> p, List<Double> q) {
-        double distancia = 0;
-
-        for (int i = 0; i < p.size(); i++) {
-            distancia += Math.sqrt(Math.pow(p.get(i) - q.get(i), 2));
-        }
-        return distancia;
-
+        return distance.calculateDistance(p,q);
     }
 }

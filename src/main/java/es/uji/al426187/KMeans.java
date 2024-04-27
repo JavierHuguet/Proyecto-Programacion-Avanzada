@@ -34,19 +34,22 @@ import java.util.*;
 
 import java.util.*;
 
-// SVEN: no implementa Algorithm
+
 public class KMeans implements Algorithm<Table, Integer, List<Double>> {
     private final int numClusters; //numero de grupos
     private final int numIterations;
     private final long seed;
 
+    public Distance distance;
+
 
     private final List<Row> prototipos = new ArrayList<>();
 
-    public KMeans(int numClusters, int numIterations, long seed) {
+    public KMeans(int numClusters, int numIterations, long seed, Distance distance) {
         this.numClusters = numClusters;
         this.numIterations = numIterations;
         this.seed = seed;
+        this.distance = distance;
 
     }
 
@@ -148,12 +151,7 @@ public class KMeans implements Algorithm<Table, Integer, List<Double>> {
 
     // SVEN: duplicación de código: calculateDistance ya está en KNN.
     public double calculateDistance(List<Double> p, List<Double> q) {
-        double distancia = 0;
-
-        for (int i = 0; i < p.size(); i++) {
-            distancia += Math.sqrt(Math.pow(p.get(i) - q.get(i), 2));
-        }
-        return distancia;
+        return distance.calculateDistance(p,q);
 
     }
 

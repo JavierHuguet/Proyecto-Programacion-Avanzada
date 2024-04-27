@@ -27,7 +27,7 @@ class KNNTest {
 
     @BeforeEach
     public void inicio() throws IOException {
-        objetoKNN = new KNN();
+        objetoKNN = new KNN(new EuclideanDistance());
         objetoCSV = new CSV();
     }
 

@@ -33,9 +33,9 @@ public class KMeansTest {
             datos.addRow(fila);
         }
         long semilla = rand.nextLong();
-        KMeans kmeans1 = new KMeans(2, 10, semilla);
+        KMeans kmeans1 = new KMeans(2, 10, semilla, new EuclideanDistance());
         kmeans1.train(datos);
-        KMeans kmeans2 = new KMeans(2, 10, semilla);
+        KMeans kmeans2 = new KMeans(2, 10, semilla, new EuclideanDistance());
         kmeans2.train(datos);
         // SVEN: evidentemente, pasa la prueba, pero solo confirma que la versión de kMeans es determinista: dos versiones del algoritmo hacen lo mismo con los mismos datos de entrada
         // No dice nada sobre el correcto funcionamiento del algoritmo.

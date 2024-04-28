@@ -3,12 +3,14 @@ package es.uji.al426187.Lectores;
 import es.uji.al426187.Table;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 public abstract class ReaderTemplate {
 
     protected String fichero;
 
     protected Table tabla;
+    protected Scanner sc;
 
     public ReaderTemplate(){
         tabla = new Table();

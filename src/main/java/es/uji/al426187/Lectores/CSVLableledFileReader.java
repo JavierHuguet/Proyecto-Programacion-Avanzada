@@ -9,8 +9,8 @@ import java.util.List;
 public class CSVLableledFileReader extends CSVUnlabeledFileReader{
 
     private TableWithLabels tabla;
-    public CSVLableledFileReader(){
-        super();
+    public CSVLableledFileReader(String fichero){
+        super(fichero);
         tabla = new TableWithLabels();
     }
     @Override

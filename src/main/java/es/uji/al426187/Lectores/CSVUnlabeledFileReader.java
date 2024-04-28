@@ -1,15 +1,11 @@
 package es.uji.al426187.Lectores;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class CSVUnlabeledFileReader extends ReaderTemplate{
 
-    protected FileReader fr;
-    protected BufferedReader br;
+
 
     public CSVUnlabeledFileReader(String Fichero){
         super();
@@ -17,9 +13,7 @@ public class CSVUnlabeledFileReader extends ReaderTemplate{
 
     @Override
     public void openSource(String source) throws IOException {
-        File archivo = new File(source);
-        fr = new FileReader(archivo);
-        br = new BufferedReader(fr);
+        sc = new Scanner(new File(source));
     }
 
     @Override
@@ -41,13 +35,12 @@ public class CSVUnlabeledFileReader extends ReaderTemplate{
 
     @Override
     public void closeSource() throws IOException {
-        br.close();
-        fr.close();
+        sc.close();
     }
 
     @Override
     public String getNextData() throws IOException {
-        return br.readLine();
+        return sc.nextLine();
     }
 
     @Override

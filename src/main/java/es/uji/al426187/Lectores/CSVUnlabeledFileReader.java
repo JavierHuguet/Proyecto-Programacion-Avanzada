@@ -11,6 +11,10 @@ public class CSVUnlabeledFileReader extends ReaderTemplate{
     protected FileReader fr;
     protected BufferedReader br;
 
+    public CSVUnlabeledFileReader(String Fichero){
+        super();
+    }
+
     @Override
     public void openSource(String source) throws IOException {
         File archivo = new File(source);

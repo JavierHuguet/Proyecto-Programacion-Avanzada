@@ -3,6 +3,10 @@
 
 package es.uji.al426187;
 
+import es.uji.al426187.Distancias.EuclideanDistance;
+import es.uji.al426187.Estructuras.TableWithLabels;
+import es.uji.al426187.Lectores.CSV;
+import es.uji.al426187.MachineLearning.KNN;
 import org.junit.jupiter.api.*;
 
 import java.io.IOException;

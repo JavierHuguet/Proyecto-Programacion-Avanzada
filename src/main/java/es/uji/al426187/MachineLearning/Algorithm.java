@@ -1,8 +1,4 @@
-package es.uji.al426187;
-
-import es.uji.al426187.KMeansException;
-import es.uji.al426187.KMeans;
-import es.uji.al426187.KNN;
+package es.uji.al426187.MachineLearning;
 
 import es.uji.al426187.Table;
 public interface Algorithm < T extends Table,E,V >{

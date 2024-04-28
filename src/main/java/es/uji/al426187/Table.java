@@ -2,6 +2,8 @@
 
 package es.uji.al426187;
 
+import es.uji.al426187.Estructuras.Row;
+
 import java.util.ArrayList;
 import java.util.List;
 

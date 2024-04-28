@@ -4,8 +4,8 @@
 // - CORREGIDO MAS O MENOS definición de la interfaz “Algortihm” correcta, pero kMeans no implementa la interfaz
 // - falta SongRecSys, no ejecuta el código; sin que kMeans implemente Algorithm, no puede funcionar
 // - SongRecSys está en las pruebas, pero no ejecuta (como kMeans no implementa la interfaz Algorithm):
-// Exception in thread "main" java.lang.ClassCastException: class es.uji.al426187.KMeans cannot be cast to class
-// es.uji.al426187.Algorithm (es.uji.al426187.KMeans and es.uji.al426187.Algorithm are in unnamed module of loader 'app')
+// Exception in thread "main" java.lang.ClassCastException: class es.uji.al426187.MachineLearning.KMeans cannot be cast to class
+// es.uji.al426187.MachineLearning.Algorithm (es.uji.al426187.MachineLearning.KMeans and es.uji.al426187.MachineLearning.Algorithm are in unnamed module of loader 'app')
 //	at es.uji.al426187.SongRecSys.<init>(SongRecSys.java:28)
 //	at es.uji.al426187.SongRecSys.main(SongRecSys.java:88)
 // - duplicación del método para calcular distancia (en KNN y kMeans)
@@ -27,10 +27,11 @@
 // En la próxima entrega, solo me voy a centrar en la implementación del patrón estrategia y método de la plantilla
 // (+ pruebas correspondientes, + detección del patrón existente en el código), así que tenéis hasta la entrega final para solucionar estos problemas.
 
-package es.uji.al426187;
+package es.uji.al426187.MachineLearning;
 
-import java.util.*;
-
+import es.uji.al426187.Distancias.Distance;
+import es.uji.al426187.Estructuras.Row;
+import es.uji.al426187.Table;
 
 import java.util.*;
 

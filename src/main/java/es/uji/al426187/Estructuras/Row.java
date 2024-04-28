@@ -1,4 +1,4 @@
-package es.uji.al426187;
+package es.uji.al426187.Estructuras;
 import java.util.*;
 public class Row {
     private final List<Double> data;

@@ -1,4 +1,6 @@
-package es.uji.al426187;
+package es.uji.al426187.Distancias;
+
+import es.uji.al426187.Distancias.Distance;
 
 import java.util.List;
 

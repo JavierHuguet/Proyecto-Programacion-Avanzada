@@ -1,24 +1,21 @@
 // COMENTADO
 
 package es.uji.al426187;
+import es.uji.al426187.Lectores.CSV;
 import org.testng.annotations.Test;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
-import java.io.FileNotFoundException;
+
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
-
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CSVTest {
 
     // SVEN: ruta hard coded - falta independencia de la plataforma. No ejecuta la prueba.
-    // java.lang.NullPointerException: Cannot invoke "es.uji.al426187.CSV.readTableWithLabels(String)" because "es.uji.al426187.CSVTest.Nuevocsv" is null
+    // java.lang.NullPointerException: Cannot invoke "es.uji.al426187.Lectores.CSV.readTableWithLabels(String)" because "es.uji.al426187.CSVTest.Nuevocsv" is null
 
     String nombreFicheroMiles = "src\\main\\resources\\miles_dollars.csv";
     String nombreFicheroIris = "src\\main\\resources\\iris.csv";

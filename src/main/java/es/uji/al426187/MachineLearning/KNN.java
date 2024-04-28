@@ -1,6 +1,8 @@
-package es.uji.al426187;
+package es.uji.al426187.MachineLearning;
 
-import java.io.IOException;
+import es.uji.al426187.Distancias.Distance;
+import es.uji.al426187.Estructuras.TableWithLabels;
+
 import java.util.List;
 
 public class KNN implements Algorithm<TableWithLabels, Integer, List<Double>> {

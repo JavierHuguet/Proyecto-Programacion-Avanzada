@@ -2,8 +2,10 @@
 
 package es.uji.al426187;
 
-import org.junit.jupiter.api.*;
+import es.uji.al426187.Distancias.EuclideanDistance;
 
+import es.uji.al426187.MachineLearning.KMeans;
+import es.uji.al426187.MachineLearning.KMeansException;
 import org.testng.annotations.Test;
 import org.junit.jupiter.api.BeforeAll;
 

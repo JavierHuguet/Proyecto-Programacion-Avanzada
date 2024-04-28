@@ -1,11 +1,10 @@
 package es.uji.al426187;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import es.uji.al426187.MachineLearning.Algorithm;
+import es.uji.al426187.MachineLearning.KMeansException;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RecSys {
 

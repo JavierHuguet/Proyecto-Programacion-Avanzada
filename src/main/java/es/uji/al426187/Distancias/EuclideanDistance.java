@@ -1,8 +1,10 @@
-package es.uji.al426187;
+package es.uji.al426187.Distancias;
+
+import es.uji.al426187.Distancias.Distance;
 
 import java.util.List;
 
-public class EuclideanDistance implements Distance{
+public class EuclideanDistance implements Distance {
     @Override
     public double calculateDistance(List<Double> p, List<Double> q) {
         double distancia = 0;

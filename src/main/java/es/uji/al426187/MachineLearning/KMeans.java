@@ -41,7 +41,7 @@ public class KMeans implements Algorithm<Table, Integer, List<Double>> {
     private final int numIterations;
     private final long seed;
 
-    public Distance distance;
+    private Distance distance;
 
 
     private final List<Row> prototipos = new ArrayList<>();

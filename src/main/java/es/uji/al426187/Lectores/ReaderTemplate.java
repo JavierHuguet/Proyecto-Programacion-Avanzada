@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public abstract class ReaderTemplate {
 
-    private String fichero;
+    protected String fichero;
 
     protected Table tabla;
 
@@ -25,13 +25,13 @@ public abstract class ReaderTemplate {
 
     public abstract void processData(String data);
 
-    public abstract void closeSource();
+    public abstract void closeSource() throws IOException;
 
-    public abstract boolean hasMoreData();
+    public abstract boolean hasMoreData() throws IOException;
 
-    public abstract String getNextData();
+    public abstract String getNextData() throws IOException;
 
-    public final Table readTableFromSource(){
+    public final Table readTableFromSource() throws IOException{
         openSource(fichero);
         processHeaders(getNextData());
         while(hasMoreData()){

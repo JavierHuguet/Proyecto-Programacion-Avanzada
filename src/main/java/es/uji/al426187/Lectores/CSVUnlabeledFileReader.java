@@ -36,18 +36,18 @@ public class CSVUnlabeledFileReader extends ReaderTemplate{
     }
 
     @Override
-    public void closeSource() {
+    public void closeSource() throws IOException {
         br.close();
         fr.close();
     }
 
     @Override
-    public String getNextData() {
+    public String getNextData() throws IOException {
         return br.readLine();
     }
 
     @Override
-    public boolean hasMoreData() {
+    public boolean hasMoreData() throws IOException {
         if(getNextData() == null){
             return false;
         }else {

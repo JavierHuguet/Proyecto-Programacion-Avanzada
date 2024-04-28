@@ -11,7 +11,7 @@ public class KNN implements Algorithm<TableWithLabels, Integer, List<Double>> {
 
     public TableWithLabels tablaCompleta;
 
-    public Distance distance;
+    private Distance distance;
 
     public KNN(Distance distance){
         this.tablaCompleta = new TableWithLabels();

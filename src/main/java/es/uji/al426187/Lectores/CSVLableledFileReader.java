@@ -8,6 +8,7 @@ import java.util.List;
 
 public class CSVLableledFileReader extends CSVUnlabeledFileReader{
 
+    private TableWithLabels tabla;
     public CSVLableledFileReader(){
         super();
         tabla = new TableWithLabels();
@@ -23,6 +24,6 @@ public class CSVLableledFileReader extends CSVUnlabeledFileReader{
         }
 
         String etiqueta = elementos[elementos.length - 1];
-        tabla.addRow(data, etiqueta);
+        tabla.addRow(datas, etiqueta);
     }
 }

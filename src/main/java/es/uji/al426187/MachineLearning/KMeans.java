@@ -6,7 +6,6 @@
 // claramente distinguibles - y comprobar con 2 (nuevos) puntos muy claramente dentro de un grupo (el estimate tiene que ser igual) o muy
 // claramente en diferentes grupos (el estimate tiene que ser diferente); ver enunciado
 // - Verifica la jerarquía de excepciones en Java y verifica si tu propia excepción no puede heredar de una clase más específica (en lugar de generalmente de "Excepción”), por ejemplo, de “RunTimeException”.
-// - seleccionarPrototiposIniciales(…): método con una perdida de rendimiento (O(n) donde O(numCluster) es posible) y espacio (n, donde numClusters es posible).
 // - faltan pruebas para la excepción (era opcional - entonces eso no es esencial)
 //
 // - En resumen: las pruebas no ejecutan (menos kMeans, pero estas pruebas no comprueban el algoritmo bien), no ejecuta SongRecSys,
@@ -69,21 +68,13 @@ public class KMeans implements Algorithm<Table, Integer, List<Double>> {
         return grupo.get(0);
     }
 
-    // SVEN: - método con una perdida de rendimiento (O(n) donde
-    // O(numCluster) es posible) y espacio (n, donde numClusters es posible).
     public void seleccionarPrototiposIniciales(Table datos) {
-        List<Integer> indices = new ArrayList<>();
-        // SVEN: si tenemos por ejemplo 1.000.000 rows,
-        // vas a crear una lista de 1.000.000 elementos, solo para seleccionar
-        // numClusters (p.e. 3 en nuestros ejemplos) rows aleatoriamente?
-        for (int i = 0; i < datos.getNumRows(); i++) {
-            indices.add(i);
-        }
 
-        Collections.shuffle(indices, new Random(seed));
+        Random rand = new Random(seed);
 
         for (int i = 0; i < numClusters; i++) {
-            prototipos.add(datos.getRowAt(indices.get(i)));
+            int j = rand.nextInt(datos.getNumRows());
+            prototipos.add(datos.getRowAt(j));
         }
 
     }
@@ -136,12 +127,6 @@ public class KMeans implements Algorithm<Table, Integer, List<Double>> {
         return multiplica;
     }
 
-    // SVEN: duplicación de código: calculateDistance ya está en KNN.
-    private double calculateDistance(List<Double> p, List<Double> q) {
-        return distance.calculateDistance(p,q);
-
-    }
-
 
     private List<Integer> asignarGrupos(Table datos) {
         List<Integer> asignaciones = new ArrayList<>();
@@ -155,8 +140,7 @@ public class KMeans implements Algorithm<Table, Integer, List<Double>> {
 
             for (int j = 0; j < prototipos.size(); j++) {
 
-                d = calculateDistance(dato_actual.getData(), prototipos.get(j).getData());
-                //d = distance.calculateDistance();
+                d = distance.calculateDistance(dato_actual.getData(), prototipos.get(j).getData());
                 if (d < dMin) {
                     asignacionesnum = j;
                     dMin = d;

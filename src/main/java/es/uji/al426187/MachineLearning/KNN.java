@@ -39,7 +39,7 @@ public class KNN implements Algorithm<TableWithLabels, Integer, List<Double>> {
 
         for (int i = 0; i < this.tablaCompleta.getNumRows(); i++) {
 
-            distancia = calculateDistance(data, tablaCompleta.getRowAt(i).getData());
+            distancia = distance.calculateDistance(data, tablaCompleta.getRowAt(i).getData());
 
             if (distancia < distancia_min) {
                 distancia_min = distancia;
@@ -47,11 +47,5 @@ public class KNN implements Algorithm<TableWithLabels, Integer, List<Double>> {
             }
         }
         return claseCercana;
-    }
-
-
-
-    public double calculateDistance(List<Double> p, List<Double> q) {
-        return distance.calculateDistance(p,q);
     }
 }

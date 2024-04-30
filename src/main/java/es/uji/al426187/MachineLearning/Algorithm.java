@@ -1,6 +1,6 @@
 package es.uji.al426187.MachineLearning;
 
-import es.uji.al426187.Table;
+import es.uji.al426187.Estructuras.Table;
 public interface Algorithm < T extends Table,E,V >{
     void train(T Table) throws KMeansException;
     E estimate(V valor);

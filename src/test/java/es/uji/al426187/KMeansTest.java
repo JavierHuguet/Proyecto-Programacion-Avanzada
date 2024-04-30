@@ -4,6 +4,7 @@ package es.uji.al426187;
 
 import es.uji.al426187.Distancias.EuclideanDistance;
 
+import es.uji.al426187.Estructuras.Table;
 import es.uji.al426187.MachineLearning.KMeans;
 import es.uji.al426187.MachineLearning.KMeansException;
 import org.testng.annotations.Test;

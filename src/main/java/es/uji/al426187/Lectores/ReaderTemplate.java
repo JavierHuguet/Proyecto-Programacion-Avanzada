@@ -1,6 +1,6 @@
 package es.uji.al426187.Lectores;
 
-import es.uji.al426187.Table;
+import es.uji.al426187.Estructuras.Table;
 
 import java.io.IOException;
 import java.util.Scanner;

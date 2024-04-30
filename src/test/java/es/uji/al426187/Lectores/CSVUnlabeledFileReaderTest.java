@@ -1,13 +1,11 @@
 package es.uji.al426187.Lectores;
 
-import es.uji.al426187.Table;
+import es.uji.al426187.Estructuras.Table;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
-import javax.imageio.IIOException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -40,7 +38,7 @@ class CSVUnlabeledFileReaderTest {
     }
 
     @Test
-    void testigo() throws IOException {
+    void numeroLineas() throws IOException {
         lector.readTableFromSource();
         assertEquals(3, lector.tabla.getNumRows());
     }

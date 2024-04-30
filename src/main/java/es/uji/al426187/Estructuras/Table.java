@@ -1,6 +1,6 @@
 
 
-package es.uji.al426187;
+package es.uji.al426187.Estructuras;
 
 import es.uji.al426187.Estructuras.Row;
 

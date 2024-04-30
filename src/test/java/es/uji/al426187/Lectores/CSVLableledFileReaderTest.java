@@ -1,7 +1,6 @@
 package es.uji.al426187.Lectores;
 
 import es.uji.al426187.Estructuras.TableWithLabels;
-import es.uji.al426187.Table;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -38,7 +37,7 @@ class CSVLableledFileReaderTest {
     }
 
     @Test
-    void testigo() throws IOException {
+    void numeroLineas() throws IOException {
         lector.readTableFromSource();
         assertEquals(3, lector.tabla.getNumRows());
     }

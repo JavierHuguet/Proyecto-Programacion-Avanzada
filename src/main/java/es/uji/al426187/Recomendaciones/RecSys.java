@@ -1,5 +1,6 @@
-package es.uji.al426187;
+package es.uji.al426187.Recomendaciones;
 
+import es.uji.al426187.Estructuras.Table;
 import es.uji.al426187.MachineLearning.Algorithm;
 import es.uji.al426187.MachineLearning.KMeansException;
 

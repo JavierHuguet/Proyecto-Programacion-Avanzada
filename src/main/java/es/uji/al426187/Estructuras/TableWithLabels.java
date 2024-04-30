@@ -1,8 +1,5 @@
 package es.uji.al426187.Estructuras;
 
-import es.uji.al426187.Estructuras.RowWithLabel;
-import es.uji.al426187.Table;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

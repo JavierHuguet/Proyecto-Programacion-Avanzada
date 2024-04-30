@@ -1,9 +1,11 @@
 package es.uji.al426187;
 import es.uji.al426187.Distancias.EuclideanDistance;
+import es.uji.al426187.Estructuras.Table;
 import es.uji.al426187.Lectores.CSV;
 import es.uji.al426187.MachineLearning.Algorithm;
 import es.uji.al426187.MachineLearning.KMeans;
 import es.uji.al426187.MachineLearning.KNN;
+import es.uji.al426187.Recomendaciones.RecSys;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

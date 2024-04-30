@@ -2,8 +2,6 @@ package es.uji.al426187.Lectores;
 
 import java.io.*;
 import java.util.*;
-import es.uji.al426187.Table;
-import es.uji.al426187.Estructuras.Row;
 
 public class CSVUnlabeledFileReader extends ReaderTemplate{
 

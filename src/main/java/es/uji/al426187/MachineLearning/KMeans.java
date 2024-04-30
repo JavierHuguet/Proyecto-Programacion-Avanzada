@@ -1,14 +1,5 @@
 // COMENTADO
 //
-// - ¡Necesitas usar paquetes para organizar tu código!
-// - CORREGIDO MAS O MENOS definición de la interfaz “Algortihm” correcta, pero kMeans no implementa la interfaz
-// - falta SongRecSys, no ejecuta el código; sin que kMeans implemente Algorithm, no puede funcionar
-// - SongRecSys está en las pruebas, pero no ejecuta (como kMeans no implementa la interfaz Algorithm):
-// Exception in thread "main" java.lang.ClassCastException: class es.uji.al426187.MachineLearning.KMeans cannot be cast to class
-// es.uji.al426187.MachineLearning.Algorithm (es.uji.al426187.MachineLearning.KMeans and es.uji.al426187.MachineLearning.Algorithm are in unnamed module of loader 'app')
-//	at es.uji.al426187.SongRecSys.<init>(SongRecSys.java:28)
-//	at es.uji.al426187.SongRecSys.main(SongRecSys.java:88)
-// - duplicación del método para calcular distancia (en KNN y kMeans)
 // - ninguna de las pruebas ejecuta (por varios problemas, no solo la ruta), menos kMeans,
 // pero las pruebas en kMeanTest no son válidas para comprobar kMeans (ver código)
 // - Para hacer bien las pruebas de kMeans, tienes que crear una table con unos pocos datos distribuidos en unos pocos grupos
@@ -21,17 +12,12 @@
 // - En resumen: las pruebas no ejecutan (menos kMeans, pero estas pruebas no comprueban el algoritmo bien), no ejecuta SongRecSys,
 // habéis solucionado algunas cosas en las clases anteriores (p.e., números mágicos, bien!) pero habéis introducido nuevos errores también (p.e. Table extends CSV),
 // hay duplicación del método para calcular distancia (KNN y kMeans), hay un problema de rendimiento, faltan paquetes, errores de convenciones de nombres, y varios otros errores.
-//
-// Lo siento, pero hay demasiados problemas/errores, no puedo aprobar esta entrega.
-//
-// En la próxima entrega, solo me voy a centrar en la implementación del patrón estrategia y método de la plantilla
-// (+ pruebas correspondientes, + detección del patrón existente en el código), así que tenéis hasta la entrega final para solucionar estos problemas.
 
 package es.uji.al426187.MachineLearning;
 
 import es.uji.al426187.Distancias.Distance;
 import es.uji.al426187.Estructuras.Row;
-import es.uji.al426187.Table;
+import es.uji.al426187.Estructuras.Table;
 
 import java.util.*;
 
@@ -151,7 +137,7 @@ public class KMeans implements Algorithm<Table, Integer, List<Double>> {
     }
 
     // SVEN: duplicación de código: calculateDistance ya está en KNN.
-    public double calculateDistance(List<Double> p, List<Double> q) {
+    private double calculateDistance(List<Double> p, List<Double> q) {
         return distance.calculateDistance(p,q);
 
     }
@@ -170,6 +156,7 @@ public class KMeans implements Algorithm<Table, Integer, List<Double>> {
             for (int j = 0; j < prototipos.size(); j++) {
 
                 d = calculateDistance(dato_actual.getData(), prototipos.get(j).getData());
+                //d = distance.calculateDistance();
                 if (d < dMin) {
                     asignacionesnum = j;
                     dMin = d;

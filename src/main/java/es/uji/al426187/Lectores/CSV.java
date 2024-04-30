@@ -1,5 +1,5 @@
 package es.uji.al426187.Lectores;
-import es.uji.al426187.Table;
+import es.uji.al426187.Estructuras.Table;
 import es.uji.al426187.Estructuras.TableWithLabels;
 
 import java.io.*;

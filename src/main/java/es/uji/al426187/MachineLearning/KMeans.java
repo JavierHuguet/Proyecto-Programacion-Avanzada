@@ -60,12 +60,7 @@ public class KMeans implements Algorithm<Table, Integer, List<Double>> {
 
     @Override
     public Integer estimate(List<Double> dato) {
-        // SVEN: no tendría que ser necesario crear un "Table" con una "Row" para hacer el "asignargrupos(...).
-        // Necesitas más abstraciones y/o cambiar "asignargrupos"
-        Table data = new Table();
-        data.addRow(dato);
-        List<Integer> grupo = asignarGrupos(data);
-        return grupo.get(0);
+        return asignarGrupo(dato);
     }
 
     public void seleccionarPrototiposIniciales(Table datos) {
@@ -150,5 +145,24 @@ public class KMeans implements Algorithm<Table, Integer, List<Double>> {
             asignaciones.add(asignacionesnum);
         }
         return asignaciones;
+    }
+
+
+    private Integer asignarGrupo(List<Double> dato){
+        double distMin = Double.POSITIVE_INFINITY;
+        int grupo = 0;
+        Row row = new Row(dato);
+
+        for (int j = 0; j < prototipos.size(); j++) {
+
+            Double dist = distance.calculateDistance(row.getData(), prototipos.get(j).getData());
+            if (dist < distMin) {
+                grupo = j;
+                distMin = dist;
+
+            }
+        }
+        return grupo;
+
     }
 }

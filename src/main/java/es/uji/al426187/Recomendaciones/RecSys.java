@@ -24,8 +24,7 @@ public class RecSys {
         algorithm.train(trainData);
     }
 
-    // SVEN: es un método interno, no tiene que ser public.
-    public void estimate(){
+    private void estimate(){
 
         for (int i = 0; i < testDatos.getNumRows(); i++) {
 

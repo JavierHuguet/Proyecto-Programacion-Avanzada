@@ -7,8 +7,6 @@ import java.util.List;
 
 public class KNN implements Algorithm<TableWithLabels, Integer, List<Double>> {
 
-
-
     public TableWithLabels tablaCompleta;
 
     private Distance distance;
@@ -17,9 +15,6 @@ public class KNN implements Algorithm<TableWithLabels, Integer, List<Double>> {
         this.tablaCompleta = new TableWithLabels();
         this.distance = distance;
     }
-
-
-
 
     @Override
     public void train(TableWithLabels data) {

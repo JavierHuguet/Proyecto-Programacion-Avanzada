@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class KMeansTest {
 
-    // SVEN: inicialización vacía
+
     @BeforeAll
     static void initAll() {
         //Se ejecuta una vez antes que todos los test

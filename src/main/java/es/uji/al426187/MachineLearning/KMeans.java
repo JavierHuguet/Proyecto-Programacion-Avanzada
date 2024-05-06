@@ -8,9 +8,7 @@
 // - Verifica la jerarquía de excepciones en Java y verifica si tu propia excepción no puede heredar de una clase más específica (en lugar de generalmente de "Excepción”), por ejemplo, de “RunTimeException”.
 // - faltan pruebas para la excepción (era opcional - entonces eso no es esencial)
 //
-// - En resumen: las pruebas no ejecutan (menos kMeans, pero estas pruebas no comprueban el algoritmo bien), no ejecuta SongRecSys,
-// habéis solucionado algunas cosas en las clases anteriores (p.e., números mágicos, bien!) pero habéis introducido nuevos errores también (p.e. Table extends CSV),
-// hay duplicación del método para calcular distancia (KNN y kMeans), hay un problema de rendimiento, faltan paquetes, errores de convenciones de nombres, y varios otros errores.
+// - En resumen: las pruebas no ejecutan (menos kMeans, pero estas pruebas no comprueban el algoritmo bien), hay un problema de rendimiento, y varios otros errores.
 
 package es.uji.al426187.MachineLearning;
 

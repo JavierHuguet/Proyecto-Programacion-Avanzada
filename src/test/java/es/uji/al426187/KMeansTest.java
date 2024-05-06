@@ -20,6 +20,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class KMeansTest {
 
+    private Table tabla;
 
     @BeforeAll
     static void initAll() {
